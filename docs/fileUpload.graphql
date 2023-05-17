@@ -1,0 +1,11 @@
+
+
+mutation Mutation($file: Upload!) {
+  imageUploader(file: $file)
+}
+
+{
+  "file": null
+}
+
+

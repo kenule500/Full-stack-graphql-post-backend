@@ -1,0 +1,56 @@
+
+
+mutation RegisterUser($input: UserInput) {
+  registerUser(input: $input) {
+    token
+    user {
+      id
+      email
+      firstName
+      lastName
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query Query($username: String!, $password: String!) {
+  authenticateUser(username: $username, password: $password) {
+    user {
+      email
+      username
+    }
+    token
+  }
+}
+
+{
+  "input": {
+    "email": "kenule@gmial",
+    "firstName": "kenule",
+    "username": "kenule501",
+    "lastName": "nwinee",
+    "password": "12345"
+  },
+  "username": "kenule500",
+  "password": "12345"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+varables
+{
+  "input": {
+    "title": "kamle",
+    "content": "holll"
+  }
+}

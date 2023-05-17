@@ -1,0 +1,106 @@
+query post($id: ID!, $page: Int, $limit: Int) {
+  getAllPosts(page: $page, limit: $limit) {
+    posts {
+      id
+    title
+    content
+    author {
+      id
+      username
+    }
+    createdAt
+    updatedAt
+    }
+    paginator {
+      hasPrevPage
+      hasNextPage
+      prev
+      next
+      slNo
+      totalPosts
+      totalPages
+      perPage
+      currentPage
+    }
+  }
+  
+  getPostById(id: $id) {
+    id
+    title
+    content
+    author {
+      username
+    }
+    featureImage
+    createdAt
+    updatedAt
+  }
+  getAllMyPosts(page: $page, limit: $limit) {
+    posts {
+      id
+    title
+    content
+    author {
+      id
+      username
+    }
+    createdAt
+    updatedAt
+    }
+    paginator {
+      hasPrevPage
+      hasNextPage
+      prev
+      next
+      slNo
+      totalPosts
+      totalPages
+      perPage
+      currentPage
+    }
+  }
+}
+
+{
+  "id": "645f63ef154befa648476780",
+  "page": 1,
+  "limit": 3
+}
+
+mutation Post($input: PostInput!, $id: ID!) {
+  createPost(input: $input) {
+    id
+    title
+    content
+    featureImage
+    author {
+      id
+      lastName
+    }
+    createdAt
+    updatedAt
+  }
+
+  updatePostByID(input: $input, id: $id) {
+    title
+    content
+    featureImage
+    createdAt
+    updatedAt
+  }
+
+  deletePostByID(id: $id) {
+    id
+    message
+    success
+  }
+}
+{
+  "input": {
+    "title": "russia",
+    "content": "barca"
+  },
+  "id": "645d5ced9c5c0c04c616f557",
+}
+
+
